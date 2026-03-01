@@ -1,0 +1,240 @@
+/* パラメータ */
+:root {
+  /* カラー */
+  --white: #fff;
+  --blue: #085F8D;
+  --gray: #EBEBEB;
+  --orange: #FF961E;
+  /* フォントサイズ */
+  --heading_first: 50px;/* 見出し1 */
+  --heading_second: 30px;/* 見出し2 */
+  --list: 25px;/* リスト */
+}
+
+/* 画像を親要素とする */
+.image-size {
+  position: relative;
+}
+/* 画像サイズ調整 */
+.image-size img {
+  /* 比率を保つ */
+  width: 100%;
+  height: 100%;
+  display: block; /* 下の謎の隙間防止 */
+}
+
+/* パーツ start */
+  /* 見出しフォント指定 */
+  .heading_first {
+    font-size: var(--heading_first);
+    font-weight: bold;
+  }
+  .heading_second {
+    font-size: var(--heading_second);
+    font-weight: bold;
+  }
+
+  /* 文字色アクセント */
+  .accent {
+    color: var(--blue);
+  }
+  /* 白ボックス */
+  .white-box {
+    background: var(--white);/* ボックスカラー */
+    border-radius: 50px;/* 角の丸み */
+  }
+  /* 白ボックス内の表示文字の余白削除 */
+  .white-box p {
+    margin: 0;
+    padding: 0;
+  }
+/* パーツ end */
+
+/* コンテンツ1 start */
+  /* 見出し */
+  .top-text {
+    position: absolute;   /* 画像の上に重ねる */
+    /* 文字位置指定 */
+    top: 50%;
+    left: 5%;
+    color: var(--white);/* フォントカラー */
+  }
+/* コンテンツ1 end */
+
+/* コンテンツ2 start */
+  /* ボックス1のスタイル指定 */
+  .worries_box_first {
+    position: absolute;/* 画像の上に重ねる */
+    /* ボックス位置指定 */
+    top: 20%;
+    left: 15%;
+    padding: 0.5em 2em;/* ボックスサイズ */
+  }
+  /* ボックス2のスタイル指定 */
+  .worries_box_second {
+    position: absolute;/* 画像の上に重ねる */
+    /* ボックス位置指定 */
+    top: 40%;
+    left: 15%;
+    padding: 0.5em 2em;/* ボックスサイズ */
+    /* フォント指定 */
+    font-size: 25px;
+    font-weight: bold;
+  }
+/* コンテンツ2 end */
+
+/* コンテンツ3 start */
+  /* グレーボックス */
+  .strengths_box_gray {
+    margin: 3em 2em;/* 上下左右の余白指定 */
+    padding: 8em;/* ボックスの余白指定 */
+    top: 50%;/* ボックスの位置指定 */
+    background: var(--gray);;/* ボックスカラー */
+  }
+  /* 見出し */
+  .strengths-text {
+    margin: 0;/* 上下左右の余白指定 */
+    /* フォント指定 */
+    color: var(--blue);
+    text-align: center;
+  }
+  /* ブルーボックス */
+  /* リストスタイル指定 */
+  .strengths_list {
+    display: flex;/* 横並び */
+    list-style: none;/* ドット削除 */
+    justify-content: center;/* 全体を中央に */
+    gap: 30px;/* 要素同士の間隔を均一に */
+    padding: 0;/* 余白削除 */
+  }
+  /* ボックススタイル指定 */
+  .strengths_box_blue {
+    margin: 0;/* 上下左右の余白指定 */
+    /* 正方形にする */
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;/* 角の丸み */
+    background: var(--blue);/* カラー */
+    /* フォントを上下中央揃えにする */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* フォント指定 */
+    color: var(--white);/* カラー */
+    font-size: var(--list);/* サイズ */
+    font-weight: bold;/* 太字 */
+  }
+/* コンテンツ3 end */
+
+/* コンテンツ4 start */
+  /* 見出し */
+  .students-text {
+    position: absolute;   /* 画像の上に重ねる */
+    /* 文字位置指定 */
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);    
+    color: var(--white);/* フォントカラー */
+  }
+  /* ボックス */
+  .students_list {
+    position: absolute;   /* 画像の上に重ねる */
+    list-style: none;/* ドット削除 */
+    /* 文字位置指定 */
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* 縦並び */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;/* リスト同士の隙間 */
+    
+}
+  /* ボックススタイル */
+  .students_box {
+    width: 50%;/* サイズを均一に */
+    padding: 40px;/* サイズ */
+    border-radius: 100px;/* 角の丸み */
+    background-color: var(--white);/* カラー */
+    position: relative;
+  }
+
+  /* 左寄せ */
+  .students_box.left {
+    align-self: flex-start;
+  }
+  /* 右寄せ */
+  .students_box.right {
+    align-self: flex-end;
+  }
+
+  /* ▼ 左のしっぽ */
+  .students_box.left::before {
+    content: "";/* 疑似要素 */
+    position: absolute;/* 親要素を基準に */
+    /* 位置指定 */
+    left: 40px;
+    top: 110px;
+    border-width: 30px;/* 大きさ */
+    /* 三角作成 */
+    border-style: solid;
+    border-color: transparent transparent transparent var(--white);
+  }
+  /* ▼ 右のしっぽ */
+  .students_box.right::before {
+    content: "";/* 疑似要素 */
+    position: absolute;/* 親要素を基準に */
+    /* 位置指定 */
+    right: 40px;
+    top: 110px;
+    border-width: 30px;/* 大きさ */
+    /* 三角作成 */
+    border-style: solid;
+    border-color: transparent var(--white) transparent transparent;
+  }
+/* コンテンツ4 end */
+
+/* コンテンツ5 start */
+  /* 見出し */
+  .support_heading {
+    position: absolute;   /* 画像の上に重ねる */
+    /* 文字位置指定 */
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--blue);/* フォントカラー */
+    text-align: center;/* 中央揃え */
+  }
+  /* テキスト */
+  .support_text {
+    position: absolute;   /* 画像の上に重ねる */
+    /* 文字位置指定 */
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;/* 中央揃え */
+  }
+  /* ボタン */
+  .support_button {
+    position: absolute;   /* 画像の上に重ねる */
+    /* 位置指定 */
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* サイズ */
+    padding: 20px 60px;
+    display: inline-block;
+    border: none;/* 枠線削除 */
+    background-color: var(--orange);/* カラー */
+    color: var(--white);/* フォントカラー */
+    text-align: center;/* 中央揃え */
+    text-decoration: none;/* 下線削除 */
+    transition: 0.5s;/* ホバー時なめらかに変化させる */
+  }
+  /* ホバー */
+  .support_button:hover {
+    background-color: var(--blue);/* カラー */
+  }
+/* コンテンツ5 end */
+
